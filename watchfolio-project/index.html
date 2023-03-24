@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap");
+    </style>
+    <link rel="icon" href="images/Wlogo.png" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>Watchfolio</title>
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <header class="header">
+        <div class="header-info">
+          <div class="header-text">
+            Watches Tracked: <a href="#" class="wf-link">473</a>
+          </div>
+          <div class="header-text">
+            Exchanges Tracked: <a href="#" class="wf-link">7</a>
+          </div>
+          <div class="header-text">
+            24h Vol: <a href="#" class="wf-link">$54,542,545</a>
+          </div>
+        </div>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="moon-svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+          />
+        </svg>
+      </header>
+    </div>
+    <div class="header-wrapper">
+      <header class="header height-7rem">
+        <img src="images/Wlogo.png" class="logo" />
+        <input
+          type="text"
+          placeholder="&#x1F50E; Search Watch"
+          class="search-bar"
+        />
+        <div class="buttons">
+          <button class="btn sign-up">Sign Up</button>
+          <button class="btn log-in">Log In</button>
+        </div>
+      </header>
+    </div>
+    <section>
+      <div class="grid">
+        <div class="parent-slider">
+          <div class="title-style">
+            <h1 class="slider-title">🔥 Trending</h1>
+            <a href="#" class="more"> More &rarr;</a>
+          </div>
+          <div class="slider">
+            <ol>
+              <li>Audemars Piguet Royal Oak</li>
+              <li>Rolex GMT-Master II</li>
+              <li>Rolex Daytona</li>
+            </ol>
+          </div>
+
+          <!--
+          <div class="slider" style="transform: translateX(-100%)">
+            <div class="space-between">
+              <h1 class="slider-title">🔥 Trending</h1>
+              <a href="#" class="more"> More &rarr;</a>
+            </div>
+          </div>-->
+          <div class="dots">
+            <div class="dot active" data-slide="0"></div>
+            <div class="dot" data-slide="1"></div>
+            <div class="dot" data-slide="2"></div>
+          </div>
+        </div>
+        <div class="parent-slider">
+          <div class="title-style">
+            <div class="center-text">
+              <img src="images/GainnerIcon.png" class="icon" />
+              <h1 class="slider-title">Biggest Gainers</h1>
+            </div>
+            <a href="#" class="more"> More &rarr;</a>
+          </div>
+
+          <div class="slider">
+            <ol>
+              <li>Audemars Piguet Royal Oak</li>
+              <li>Rolex GMT-Master II</li>
+              <li>Rolex Daytona</li>
+            </ol>
+          </div>
+          <div class="dots">
+            <div class="dot active" data-slide="0"></div>
+            <div class="dot" data-slide="1"></div>
+            <div class="dot" data-slide="2"></div>
+          </div>
+        </div>
+        <div class="parent-slider">
+          <div class="title-style">
+            <div class="center-text">
+              <img src="images/Addicon.png" class="icon" />
+              <h1 class="slider-title">Recently Added</h1>
+            </div>
+            <a href="#" class="more"> More &rarr;</a>
+          </div>
+          <div class="slider">
+            <ol>
+              <li>Audemars Piguet Royal Oak</li>
+              <li>Rolex GMT-Master II</li>
+              <li>Rolex Daytona</li>
+            </ol>
+          </div>
+          <div class="dots">
+            <div class="dot active" data-slide="0"></div>
+            <div class="dot" data-slide="1"></div>
+            <div class="dot" data-slide="2"></div>
+          </div>
+        </div>
+      </div>
+      <div class="filters">Sort By:</div>
+    </section>
+  </body>
+</html>
