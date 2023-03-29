@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-size: 62.5%;
   font-family: "Inter", sans-serif;
-  background-color: white;
   color: black;
 }
 
@@ -148,6 +147,7 @@ section {
 
   display: flex;
   justify-content: center;
+  transition: all 1s ease;
 }
 
 .dots {
@@ -197,7 +197,7 @@ section {
 }
 
 .more {
-  color: rgb(0, 76, 255);
+  color: rgb(53, 109, 239);
   text-decoration: none;
   font-size: 1.4rem;
 }
@@ -214,7 +214,107 @@ li:last-child {
 .filters {
   max-width: 140rem;
   height: 7.77rem;
-  background-color: bisque;
+  /*background-color: bisque;*/
   margin: 0 auto;
+  font-size: 4rem;
+  padding: 0 3rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.select-filter {
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.select-filter:focus {
+  outline: none;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.col {
+  position: sticky;
+  top: 0;
+
+  max-width: 140rem;
+  height: 5rem;
+  margin: 0 auto;
+  background-color: rgb(1, 230, 255);
+  border-top: 1px solid rgba(0, 0, 0, 0.123);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.123);
+
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.sticky {
+}
+
+.col p {
+  font-size: 1.6rem;
+}
+
+.col p:nth-child(1) {
+  margin-left: 8rem;
+}
+.col p:nth-child(2) {
+  margin-left: 12rem;
+}
+.col p:nth-child(3) {
+  margin-left: 18rem;
+}
+
+.col p:nth-child(4) {
+  margin-left: 10rem;
+}
+
+.col p:nth-child(5),
+.col p:nth-child(6),
+.col p:nth-child(7) {
+  margin-left: 4rem;
+}
+.col p:nth-child(8) {
+  margin-left: 17rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: 5;
+}
+.module {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50rem;
+  height: 40rem;
+  box-shadow: 0 3rem 5rem #0000004d;
+
+  padding: 5rem;
+  z-index: 10;
+  background-color: aliceblue;
+}
+
+.module h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.module p {
   font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.module i {
+  font-size: 1.5rem;
 }
