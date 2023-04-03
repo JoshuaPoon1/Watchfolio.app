@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!--
+    *********************************
+    100x 程序员是神话吗?
+    Made by Joshua Poon 😎
+    All source code can be found on
+    https://github.com/JoshuaPoon1/Watchfolio.app
+     / _ \
+   \_\(_)/_/
+    _//"\\_ 
+     /   \
+    *********************************
+  -->
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,9 +23,10 @@
 
     <link rel="stylesheet" href="additionalStyles.css" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="media.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
-
     <script src="script.js" defer></script>
+    <script src="app.js" defer></script>
     <title>Watchfolio</title>
   </head>
   <body>
@@ -21,13 +34,13 @@
       <header class="header">
         <div class="header-info">
           <div class="header-text">
-            Watches Tracked: <a href="#" class="wf-link wt">473</a>
+            Watches Tracked: <a href="#" class="wf-link wt">83</a>
           </div>
           <div class="header-text">
-            Exchanges Tracked: <a href="#" class="wf-link et">7</a>
+            Exchanges Tracked: <a href="#" class="wf-link et">2</a>
           </div>
           <div class="header-text">
-            24h Vol: <a href="#" class="wf-link">$54,542,545</a>
+            30d Vol: <a href="#" class="wf-link">$10,543,231</a>
           </div>
         </div>
 
@@ -105,11 +118,25 @@
             <a href="#" class="more"> More &rarr;</a>
           </div>
 
-          <div class="slider">
+          <div class="slider gainers" style="transform: translateX(0%)">
             <ol>
               <li>Audemars Piguet Royal Oak</li>
               <li>Rolex GMT-Master II</li>
               <li>Rolex Daytona</li>
+            </ol>
+          </div>
+          <div class="slider gainers" style="transform: translateX(100%)">
+            <ol start="4">
+              <li>Rolex Submariner</li>
+              <li>Omega Seamaster</li>
+              <li>TAG Heuer Carrera</li>
+            </ol>
+          </div>
+          <div class="slider gainers" style="transform: translateX(200%)">
+            <ol start="7">
+              <li>Omega Speedmaster</li>
+              <li>Rolex Datejust</li>
+              <li>Breitling Navitimer</li>
             </ol>
           </div>
           <div class="dots">
@@ -126,11 +153,25 @@
             </div>
             <a href="#" class="more"> More &rarr;</a>
           </div>
-          <div class="slider">
+          <div class="slider recents" style="transform: translateX(0%)">
             <ol>
               <li>Audemars Piguet Royal Oak</li>
               <li>Rolex GMT-Master II</li>
               <li>Rolex Daytona</li>
+            </ol>
+          </div>
+          <div class="slider recents" style="transform: translateX(100%)">
+            <ol start="4">
+              <li>Rolex Submariner</li>
+              <li>Omega Seamaster</li>
+              <li>TAG Heuer Carrera</li>
+            </ol>
+          </div>
+          <div class="slider recents" style="transform: translateX(200%)">
+            <ol start="7">
+              <li>Omega Speedmaster</li>
+              <li>Rolex Datejust</li>
+              <li>Breitling Navitimer</li>
             </ol>
           </div>
           <div class="dots">
@@ -147,11 +188,12 @@
             <option value="price">Price</option>
             <option value="biggestGainers">Biggest Gainers</option>
             <option value="biggestLosers">Biggest Losers</option>
-            <option value="Popularity">Popularity</option>
+            <option value="rolex">Brand: Rolex</option>
+            <option value="omega">Brand: Omega</option>
           </select>
         </form>
       </div>
-      <div class="col">
+      <div class="col sticky">
         <p>&#35;</p>
         <p>Name</p>
         <p>Production Date</p>
@@ -164,27 +206,35 @@
         <p>Last 30 days</p>
       </div>
       <div class="ranking">
-        <div class="row">
+        <!--//this is the following style for html injection.
+        <div class="col info">
           <p>1</p>
           <p>Audemars Piguet Royal Oak</p>
           <p>2023</p>
-          <p>$43,432</p>
+          <p>$59,432</p>
 
           <p>+1.2%</p>
           <p>-9.3%</p>
           <p>-13%</p>
-
-          <p>Last 30 days</p>
-        </div>
+        </div>-->
       </div>
     </section>
 
     <div class="overlay-blur hidden"></div>
     <div class="watches-tracked module hidden">
-      <h1>We track 7 brands and 583 models as of now.</h1>
+      <h1>We track 7 brands and 83 models as of now.</h1>
       <p>
-        Those include Rolex, Patek Philippe, Omega, Seiko, Cartier, IWC, and TAG
-        Heuer.
+        Those include
+        <ul>
+          <li>Rolex</li>
+          <li>Patek Philippe</li>
+          <li>Omega</li>
+          <li>Seiko</li>
+          <li>Cartier</li>
+          <li>IWC</li>
+          <li>TAG
+            Heuer.</li>
+        </ul> 
       </p>
       <i>We plan to add support for more brands in the future.</i>
     </div>
@@ -198,7 +248,10 @@
     </div>
 
     </div>
-    <div class="welcome hidden module"></div>
+    <div class="welcome module hidden">
+      
+      <h1>Welcome abord</h1>
+    </div>
+    <p class="author">✨Created by Joshua Poon✨</p>
   </body>
 </html>
-
