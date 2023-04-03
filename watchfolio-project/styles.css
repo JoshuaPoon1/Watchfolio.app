@@ -235,22 +235,25 @@ li:last-child {
 }
 
 .col {
-  position: sticky;
-  top: 0;
-
   max-width: 140rem;
   height: 5rem;
   margin: 0 auto;
-  background-color: rgb(1, 230, 255);
+
   border-top: 1px solid rgba(0, 0, 0, 0.123);
   border-bottom: 1px solid rgba(0, 0, 0, 0.123);
 
+  background-color: white;
+
   display: flex;
   align-items: center;
-  z-index: 1;
+  position: relative;
 }
 
 .sticky {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: rgb(1, 230, 255);
 }
 
 .col p {
@@ -264,7 +267,7 @@ li:last-child {
   margin-left: 12rem;
 }
 .col p:nth-child(3) {
-  margin-left: 18rem;
+  margin-left: 25rem;
 }
 
 .col p:nth-child(4) {
@@ -278,6 +281,34 @@ li:last-child {
 }
 .col p:nth-child(8) {
   margin-left: 17rem;
+}
+
+.col.info p:nth-child(1) {
+  position: absolute;
+}
+.col.info p:nth-child(2) {
+  position: absolute;
+  left: 2rem;
+}
+.col.info p:nth-child(3) {
+  position: absolute;
+  left: 30rem;
+}
+.col.info p:nth-child(4) {
+  position: absolute;
+  left: 61rem;
+}
+.col.info p:nth-child(5) {
+  position: absolute;
+  left: 76rem;
+}
+.col.info p:nth-child(6) {
+  position: absolute;
+  left: 83rem;
+}
+.col.info p:nth-child(7) {
+  position: absolute;
+  left: 92rem;
 }
 
 .hidden {
@@ -294,7 +325,7 @@ li:last-child {
   z-index: 5;
 }
 .module {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -315,6 +346,43 @@ li:last-child {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
+.module ul {
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+}
 .module i {
   font-size: 1.5rem;
+}
+.module a {
+  font-size: 2rem;
+  color: blue;
+}
+
+.module.welcome {
+  overflow: hidden;
+  width: 80rem;
+  height: 50rem;
+  border-radius: 1rem;
+  background-color: black;
+}
+.module.welcome::before {
+  content: "";
+  background-image: url("images/mellow-watch.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.7;
+}
+
+.module.welcome h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5rem;
+  color: white;
+  z-index: 2;
 }
