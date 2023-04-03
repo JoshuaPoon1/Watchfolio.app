@@ -1,3 +1,5 @@
+/*for dark mode, handling modal clicks, and automating sliders. ~五百二十赫兹 */
+
 const darkMode = document.querySelector(".moon-svg");
 const headerText = document.querySelectorAll(".header-text");
 const sectionElement = document.querySelector("section");
@@ -11,6 +13,7 @@ const sort = document.querySelector(".sort");
 const blur = document.querySelector(".overlay-blur");
 const modules = document.querySelectorAll(".module");
 const links = document.querySelectorAll(".wf-link");
+const signup = document.querySelector(".sign-up");
 
 darkMode.addEventListener("click", () => {
   document.body.classList.toggle("background-color-black");
@@ -37,11 +40,14 @@ darkMode.addEventListener("click", () => {
   console.log("click");
 });
 
-const sliders = document.querySelectorAll(".slider.trending");
-const dots = document.querySelectorAll(".dot.trending");
+const trendingSliders = document.querySelectorAll(".slider.trending");
+const gainerSliders = document.querySelectorAll(".slider.gainers");
+const recentAddedSliders = document.querySelectorAll(".slider.recents");
 
-const goToSlide = (slideNo) => {
-  sliders.forEach((slider, index) => {
+const dots = document.querySelectorAll(".dot");
+
+const goToSlide = (slideNo, specificSlider) => {
+  specificSlider.forEach((slider, index) => {
     slider.style.transform = `translateX(${(index - slideNo) * 100}%)`;
   });
 };
@@ -50,23 +56,28 @@ const activeDot = (slideNo) => {
   dots.forEach((dot) => {
     dot.classList.remove("active");
   });
-  const activeDot = document.querySelector(
-    `.dot.trending[data-slide="${slideNo}"]`
-  );
+  const activeDot = document.querySelector(`.dot[data-slide="${slideNo}"]`);
   activeDot?.classList.add("active");
 };
 
-let currentSlide = 0;
+const nextSlide = (seconds, specificSlider) => {
+  let currentSlide = 0;
+  setTimeout(() => {
+    setInterval(function () {
+      if (currentSlide === specificSlider.length - 1) {
+        currentSlide = 0;
+      } else {
+        currentSlide++;
+      }
+      goToSlide(currentSlide, specificSlider);
+      //activeDot(currentSlide);
+    }, 3000);
+  }, seconds * 1000);
+};
 
-const nextSlide = setInterval(function () {
-  if (currentSlide === sliders.length - 1) {
-    currentSlide = 0;
-  } else {
-    currentSlide++;
-  }
-  goToSlide(currentSlide);
-  activeDot(currentSlide);
-}, 3000);
+nextSlide(0, trendingSliders);
+nextSlide(1.5, gainerSliders);
+nextSlide(3, recentAddedSliders);
 
 const show = (str) => {
   blur.classList.remove("hidden");
@@ -92,4 +103,8 @@ blur.addEventListener("click", () => {
   modules.forEach((module) => {
     module.classList.add("hidden");
   });
+});
+
+signup.addEventListener("click", () => {
+  show("welcome");
 });
