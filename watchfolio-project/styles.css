@@ -234,54 +234,40 @@ li:last-child {
   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 
-.col {
-  max-width: 140rem;
-  height: 5rem;
+table {
+  max-width: 1400px;
+  width: 100%;
+
   margin: 0 auto;
-
-  border-top: 1px solid rgba(0, 0, 0, 0.123);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.123);
-
-  background-color: white;
-
-  display: flex;
-  align-items: center;
-  position: relative;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-
-.sticky {
+th {
   position: sticky;
   top: 0;
-  z-index: 2;
-  background-color: rgb(1, 230, 255);
+  text-align: left;
+  font-weight: bold;
+  padding: 18px;
+  background-color: rgba(0, 234, 255, 0.5);
+  backdrop-filter: blur(5px);
+  font-size: 1.3rem;
+}
+td {
+  padding: 18px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 1.3rem;
+}
+td:first-child,
+th:first-child {
+  text-align: center;
+}
+td:nth-child(n + 4),
+th:nth-child(n + 4) {
+  text-align: right;
 }
 
-.col p {
-  font-size: 1.6rem;
-}
 
-.col p:nth-child(1) {
-  margin-left: 8rem;
-}
-.col p:nth-child(2) {
-  margin-left: 12rem;
-}
-.col p:nth-child(3) {
-  margin-left: 25rem;
-}
-
-.col p:nth-child(4) {
-  margin-left: 10rem;
-}
-
-.col p:nth-child(5),
-.col p:nth-child(6),
-.col p:nth-child(7) {
-  margin-left: 4rem;
-}
-.col p:nth-child(8) {
-  margin-left: 17rem;
-}
 
 .col.info p:nth-child(1) {
   position: absolute;
@@ -289,6 +275,7 @@ li:last-child {
 .col.info p:nth-child(2) {
   position: absolute;
   left: 2rem;
+  
 }
 .col.info p:nth-child(3) {
   position: absolute;
@@ -308,7 +295,7 @@ li:last-child {
 }
 .col.info p:nth-child(7) {
   position: absolute;
-  left: 92rem;
+  left: 92rem; 
 }
 
 .hidden {
