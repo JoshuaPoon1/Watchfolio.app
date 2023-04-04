@@ -24,9 +24,8 @@
     <link rel="stylesheet" href="additionalStyles.css" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="media.css" />
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="script.js" defer></script>
-    <script src="app.js" defer></script>
+    <script type = "module" defer src="script.js"></script>
+    <script defer src="app.js"></script>
     <title>Watchfolio</title>
   </head>
   <body>
@@ -193,31 +192,33 @@
           </select>
         </form>
       </div>
-      <div class="col sticky">
-        <p>&#35;</p>
-        <p>Name</p>
-        <p>Production Date</p>
-        <p>Price</p>
-
-        <p>7d%</p>
-        <p>30d%</p>
-        <p>1yr%</p>
-
-        <p>Last 30 days</p>
-      </div>
-      <div class="ranking">
-        <!--//this is the following style for html injection.
-        <div class="col info">
-          <p>1</p>
-          <p>Audemars Piguet Royal Oak</p>
-          <p>2023</p>
-          <p>$59,432</p>
-
-          <p>+1.2%</p>
-          <p>-9.3%</p>
-          <p>-13%</p>
-        </div>-->
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Production Date</th>
+            <th>Price</th>
+            <th>7d%</th>
+            <th>30d%</th>
+            <th>1yr%</th>
+            <th>Last 30 days</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--====== HTML INJECTION======
+          <tr>
+            <td>1</td>
+            <td>Product A</td>
+            <td>2022-03-15</td>
+            <td>$10.99</td>
+            <td>+3%</td>
+            <td>+10%</td>
+            <td>+50%</td>
+            <td>$300</td>
+          </tr>-->
+        </tbody>
+      </table>
     </section>
 
     <div class="overlay-blur hidden"></div>
