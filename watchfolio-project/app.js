@@ -1,5 +1,5 @@
 const filterBy = document.querySelector(".select-filter");
-const ranking = document.querySelector(".ranking");
+const ranking = document.querySelector("tbody");
 
 class watch {
   constructor(price, prodDate, svn, thrd, yr, name) {
@@ -48,16 +48,17 @@ class app {
         .sort((a, b) => b.price - a.price)
         .forEach((watch, index) => {
           let html = `
-      <div class="col info">
-        <p>${index + 1}</p>
-        <p>${watch.type + " " + watch.name}</p>
-        <p>${watch.prodDate}</p>
-        <p>$${watch.price}</p>
+      <tr>
+        <td>${index + 1}</td>
+        <td>${watch.type + " " + watch.name}</td>
+        <td>${watch.prodDate}</td>
+        <td>$${watch.price}</td>
     
-        <p>${watch.svn}%</p>
-        <p>${watch.thrd}%</p>
-        <p>${watch.yr}%</p>
-      </div>`;
+        <td>${watch.svn}%</td>
+        <td>${watch.thrd}%</td>
+        <td>${watch.yr}%</td>
+        <td>NULL</td>
+      </tr>`;
           ranking.insertAdjacentHTML("beforeend", html);
         });
     }
