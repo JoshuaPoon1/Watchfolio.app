@@ -202,9 +202,17 @@ section {
   font-size: 1.4rem;
 }
 
-ol li {
+ol li{
   font-size: 2rem;
   margin-bottom: 2rem;
+}
+.list{
+  color:black;
+}
+.news-link{
+  font-size: 2rem;
+  color:rgb(0, 0, 0);
+  text-decoration: none;
 }
 
 li:last-child {
