@@ -8,14 +8,16 @@ const parentSlider = document.querySelectorAll(".parent-slider");
 const sliderTitle = document.querySelectorAll(".slider-title");
 const more = document.querySelectorAll(".more");
 const guideP = document.querySelectorAll(".guide p");
-const guide = document.querySelector(".guide");
 const sort = document.querySelector(".sort");
 const blur = document.querySelector(".overlay-blur");
 const modules = document.querySelectorAll(".module");
 const links = document.querySelectorAll(".wf-link");
 const signup = document.querySelector(".sign-up");
 
-darkMode.addEventListener("click", () => {
+
+darkMode.addEventListener("click", darkModeToggle);
+
+function darkModeToggle(){
   document.body.classList.toggle("background-color-black");
   headerText.forEach((a) => {
     a.classList.toggle("color-white");
@@ -33,16 +35,17 @@ darkMode.addEventListener("click", () => {
   more.forEach((el) => {
     el.classList.toggle("color-white");
   });
-  guideP.forEach((p) => p.classList.toggle("color-white"));
-  guide.classList.toggle("borders-top-bot");
-  sort.classList.toggle("color-white");
 
-  console.log("click");
-});
+  guideP.forEach((p) => p.classList.toggle("color-white"));
+  sort.classList.toggle("color-white");
+};
+
+darkModeToggle();
 
 const trendingSliders = document.querySelectorAll(".slider.trending");
+const trendingDots = document.querySelectorAll(".dot.trending")
 const gainerSliders = document.querySelectorAll(".slider.gainers");
-const recentAddedSliders = document.querySelectorAll(".slider.recents");
+const gainerDots = document.querySelectorAll(".dot.gainer")
 
 const dots = document.querySelectorAll(".dot");
 
@@ -52,15 +55,16 @@ const goToSlide = (slideNo, specificSlider) => {
   });
 };
 
-const activeDot = (slideNo) => {
-  dots.forEach((dot) => {
+const activeDot = (slideNo,specificDots) =>{
+  specificDots.forEach((dot) => {
     dot.classList.remove("active");
   });
-  const activeDot = document.querySelector(`.dot[data-slide="${slideNo}"]`);
+  //const activeDot = document.querySelector(`.dot[data-slide="${slideNo}"]`);
+  const activeDot = specificDots[slideNo]
   activeDot?.classList.add("active");
 };
 
-const nextSlide = (seconds, specificSlider) => {
+const nextSlide = (seconds, specificSlider,specificDots) => {
   let currentSlide = 0;
   setTimeout(() => {
     setInterval(function () {
@@ -70,14 +74,14 @@ const nextSlide = (seconds, specificSlider) => {
         currentSlide++;
       }
       goToSlide(currentSlide, specificSlider);
-      //activeDot(currentSlide);
+      activeDot(currentSlide,specificDots);
     }, 3000);
   }, seconds * 1000);
 };
 
-nextSlide(0, trendingSliders);
-nextSlide(1.5, gainerSliders);
-nextSlide(3, recentAddedSliders);
+nextSlide(0, trendingSliders, trendingDots);
+nextSlide(1.5, gainerSliders, gainerDots);
+
 
 const show = (str) => {
   blur.classList.remove("hidden");
