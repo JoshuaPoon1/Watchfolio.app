@@ -25,6 +25,7 @@ searchBar.addEventListener("keyup",()=>{
     watchNames.forEach((watch)=>{
         if (watch.toLowerCase().startsWith(searchBar.value.toLowerCase()) && searchBar.value != ""){
             let html = `<li><b>${watch.substring(0,searchBar.value.length)}</b>${watch.substring(searchBar.value.length,watch.length)}</li>`
+            /*make html with <a> tags with links according to api*/
             suggestion.insertAdjacentHTML("beforeend",html)
         }
     })
