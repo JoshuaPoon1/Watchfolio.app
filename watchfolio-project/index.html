@@ -2,10 +2,10 @@
 <html lang="en">
   <!--
     *********************************
-    100x 程序员是神话吗?
-    Made by Joshua Poon 😎
+    Made by Joshua Poon :p
     All source code can be found on
     https://github.com/JoshuaPoon1/Watchfolio.app
+    Fork to your hearts desire. 
      / _ \
    \_\(_)/_/
     _//"\\_ 
@@ -20,12 +20,13 @@
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap");
     </style>
     <link rel="icon" href="images/Wlogo.png" />
-
-    <link rel="stylesheet" href="additionalStyles.css" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="additionalStyles.css" />
     <link rel="stylesheet" href="media.css" />
-    <script type = "module" defer src="script.js"></script>
-    <script defer src="app.js"></script>
+    <script type="module" src="app.js" defer></script>
+    <script type = "module" src="script.js" defer></script>
+    <script type="module" src="autosuggest.js" defer></script>
+
     <title>Watchfolio</title>
   </head>
   <body>
@@ -62,11 +63,20 @@
     <div class="header-wrapper">
       <header class="header height-7rem">
         <img src="images/Wlogo.png" class="logo" />
+      
+      <form class="search-form">
         <input
           type="text"
           placeholder="&#x1F50E; Search Watch"
           class="search-bar"
-        />
+        >
+        <ul class="autosuggestion-list">
+          <!--
+          <li class="list">html</li>
+          -->
+        </ul>
+      </form>
+      
         <div class="buttons">
           <button class="btn sign-up">Sign Up</button>
           <button class="btn log-in">Log In</button>
@@ -75,7 +85,7 @@
     </div>
     <section>
       <div class="grid">
-        <div class="parent-slider">
+        <div class="parent-slider trending">
           <div class="title-style">
             <h1 class="slider-title">🔥 Trending</h1>
             <a href="#" class="more"> More &rarr;</a>
@@ -153,10 +163,10 @@
             <a href="#" class="more"> To Blog &rarr;</a>
           </div>
           <div class="slider recents" style="transform: translateX(0%)">
-            <ul>
-              <li><a href = "https://www.hodinkee.com/articles/the-rolex-milgauss-is-now-discontinued" target="_blank" class="news-link">Milguass Discontinued</a></li>
-              <li><a href = "https://www.oris.ch/en/kermit" target = "_blank" class="news-link">Kermit Oris</a></li>
-              <li><a href="https://www.hodinkee.com/articles/rolex-day-dates-with-stone-dials-inspirational-words-and-emojis" target="_blank" class="news-link">New Rolex Daydate</a></li>
+            <ul class= "news">
+              <li class= "news"><a href = "https://www.hodinkee.com/articles/the-rolex-milgauss-is-now-discontinued" target="_blank" class="news-link">Milguass Discontinued</a></li>
+              <li class="news"><a href = "https://www.oris.ch/en/kermit" target = "_blank" class="news-link">Kermit Oris</a></li>
+              <li class="news"><a href="https://www.hodinkee.com/articles/rolex-day-dates-with-stone-dials-inspirational-words-and-emojis" target="_blank" class="news-link">New Rolex Daydate</a></li>
             </ul>
           </div>
         </div>
