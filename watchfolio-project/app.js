@@ -14,19 +14,6 @@ class watch {
     this.name = this.type + " " + name;
   }
 }
-/*
-class rolex extends watch {
-  constructor(price, prodDate, svn, thrd, yr, name) {
-    super(price, prodDate, svn, thrd, yr, name);
-    this.type = "rolex";
-  }
-}
-class omega extends watch {
-  constructor(price, prodDate, svn, thrd, yr, name) {
-    super(price, prodDate, svn, thrd, yr, name);
-    this.type = "omega";
-  }
-}*/
 
 const seamaster = new watch(5422,2022,-2.45,-4.54,-12.43,"seamaster","omega");
 const speedmaster = new watch(8888,2022,-2.45,-4.54,-12.43,"speedmaster","omega");
@@ -39,9 +26,10 @@ let watches = [];
 //for loop and push each watch.
 watches.push(seamaster, speedmaster, daytona);
 
-let filter;
+
 
 class app {
+  
   constructor() {
     filterBy.addEventListener("change", this._injectHtml);
     searchBar.addEventListener("keyup", this._autoSuggest.bind(this));
@@ -49,7 +37,7 @@ class app {
   }
 
   _injectHtml() {
-    filter = filterBy.value;
+    let filter = filterBy.value;
     ranking.innerHTML = ""; //clear everything.
     function helpMeSort(arr) {
       let html = arr.sort((a, b) => b.price - a.price).map((watch, index) => {
@@ -92,12 +80,30 @@ class app {
         autosuggestionList.insertAdjacentHTML("beforeend", htmlString);
       }
     });
+
+    this._listenToClick();
+  }
+
+  _listenToClick(){
+    let listElements = document.querySelectorAll(".list");
+
+    listElements.forEach(list => {
+      list.addEventListener("click", function(){
+        searchBar.value = "";
+        searchBar.value = this.textContent;
+        autosuggestionList.innerHTML = "";
+      })
+    })
+    
   }
   _clear() {
     autosuggestionList.innerHTML = "";
   }
+
 }
 
 const myApp = new app();
 
-//export {watches}
+
+
+
