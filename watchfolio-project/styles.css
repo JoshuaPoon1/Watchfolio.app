@@ -298,10 +298,11 @@ td:first-child,
 th:first-child {
   text-align: center;
 }
+/*
 td:nth-child(n + 4),
 th:nth-child(n + 4) {
   text-align: right;
-}
+}*/
 
 .col.info p:nth-child(1) {
   position: absolute;
@@ -380,30 +381,67 @@ th:nth-child(n + 4) {
 }
 
 .module.welcome {
-  overflow: hidden;
   width: 80rem;
   height: 50rem;
   border-radius: 1rem;
-  background-color: black;
-}
-.module.welcome::before {
-  content: "";
-  background-image: url("images/mellow-watch.jpg");
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.7;
+  background-color: rgb(14, 9, 115);
+  border: 3px solid aqua;
 }
 
+
 .module.welcome h1 {
-  position: absolute;
-  left: 50%;
+  margin-left: 50%;
   transform: translateX(-50%);
   font-size: 5rem;
   color: white;
-  z-index: 2;
 }
 
+.module.welcome p {
+  margin-left: 44%;
+  transform: translateX(-44%);
+  font-size: 1.2rem;
+  color: white;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  color:white;
+  margin-top: 7rem;
+}
+
+.form-grid input{
+  padding: 1rem 2rem;
+  font-size: 1.7rem;
+  width:100%
+}
+.form-grid div label{
+  display:block;
+  font-size: 2rem;
+  color:white;
+  margin-bottom: 1rem;
+}
+.form-grid button{
+  height:70%;
+  font-size: 1.7rem;
+  align-self: flex-end;
+}
+.form-grid button:hover{
+  background-color: aquamarine;
+}
+
+.d3_miniGraph{
+
+  background-color: aliceblue;
+  position:absolute;
+  height:100%;
+  width:100%;
+  top:0;
+  text-align:center;
+}
+.padding_zero{
+  position:relative;
+  padding:0;
+  
+}
