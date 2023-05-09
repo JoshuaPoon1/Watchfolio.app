@@ -1,6 +1,7 @@
 const filterBy = document.querySelector(".select-filter");
 const ranking = document.querySelector("tbody");
 const searchBar = document.querySelector(".search-bar");
+const searchForm = document.querySelector(".search-form")
 const autosuggestionList = document.querySelector(".autosuggestion-list");
 
 class watch {
@@ -22,6 +23,11 @@ const daytona = new watch(34000, 2022, 1.2, 3.5, 12.43, "daytona", "rolex");
 let watches = [];
 
 //we need to read api to store each object accordingly.
+/*
+const testApi = await fetch("www.watchfolio.app/api/v1/watches")
+//should return an array of watches
+
+*/
 
 //for loop and push each watch.
 watches.push(seamaster, speedmaster, daytona);
@@ -33,12 +39,15 @@ class app {
   constructor() {
     filterBy.addEventListener("change", this._injectHtml);
     searchBar.addEventListener("keyup", this._autoSuggest.bind(this));
-    this._injectHtml("price");
+    searchForm.addEventListener("submit",this._loadPage())
+    this._injectHtml();
   }
 
   _injectHtml() {
     let filter = filterBy.value;
     ranking.innerHTML = ""; //clear everything.
+    
+    /*helper function*/
     function helpMeSort(arr) {
       let html = arr.sort((a, b) => b.price - a.price).map((watch, index) => {
           return `
@@ -51,11 +60,12 @@ class app {
         <td>${watch.svn}%</td>
         <td>${watch.thrd}%</td>
         <td>${watch.yr}%</td>
-        <td>NULL</td>
+        <td class="padding_zero"><div class="d3_miniGraph">insert graph here.</div></td>
       </tr>`;
         }).join("");
       ranking.insertAdjacentHTML("beforeend", html);
     }
+    /*--------*/
 
     if (filter == "omega" || filter == "rolex") {
       let brandFiltered = watches.filter((watch) => watch.type === filter);
@@ -100,10 +110,12 @@ class app {
     autosuggestionList.innerHTML = "";
   }
 
+  _loadPage(){
+    console.log("load")
+  }
+
 }
-
 const myApp = new app();
-
 
 
 
