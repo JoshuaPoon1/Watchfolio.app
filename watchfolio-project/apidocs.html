@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watchfolio API</title>
+</head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+}
+h1{
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    font-family:Arial, Helvetica, sans-serif
+}
+body{
+    background-color: antiquewhite;
+    height: 300vh;
+}
+section{
+    max-width: 1000px;
+    font-size: 3rem;
+    margin: 0 auto;
+    
+}
+i {
+    font-size: 1.8rem;
+    font-weight:bolder
+}
+a{
+    font-size:1.8rem;
+    color:cornflowerblue
+}
+ul li{
+    font-size: 1.8rem;
+}
+strong{
+    font-size: 2rem;
+}
+
+.start{
+    margin-top: 3rem;
+}
+
+.info{
+    background-color: burlywood;
+    font-size: 1.7rem;
+}
+.filter{
+    margin-top: 4rem;
+}
+
+.subtitle{
+    margin-bottom: 1rem;
+    font-size:3rem;
+}
+</style>
+<body>
+    <h1> Watchfolio API documentation</h1>
+    <section>
+        <p>This api updates every day. By using puppeteer.js, sold listings from eBay and Chrono24 are scraped and a mean is calculated. This mean is then stored in a csv file that can be found <a href="www.github.com/JoshuaPoon1/watchfolio/csv" target="_blank"> here</a>.
+        The price property of each watch is derived from this mean and csv file.</p>
+    
+        <h1 class="subtitle">Start here</h1>
+    <p class="start">To start using this api, direct fetch requests to <a href="watchfolio.com/api/watches"><i>watchfolio.com/api/watches</i></a> to get json response containing: </p>
+        <ul>
+            <li>
+               <strong>watches:</strong> property which contains an array of watch objects.each watch is ordered defaultly from lowest price to highest price, irrespecive of brand.
+               each watch object looks like:
+                <div class="info">
+                {
+                    </br>  name: Omega Seamaster Tokyo Edition (string)
+                    </br> brand: Omega (string)
+                    </br> model: 2020 (string)
+                    </br>price: 4384.83 (double)
+                    </br> 7d_price_move: -2.3% (string)
+                    </br> 30d_price_move: -4.8% (string)
+                    </br>1yr_price_move: 21% (string)
+                    </br>}
+                    
+                </div>
+            </li>
+            <li> <strong>lastUpdated:</strong> property which contains the date in which data was last updated</li>
+        </ul>
+        
+        <h1 class="subtitle">Filtering</h1>
+    <p class="filter">To filter watch by brand, direct fetch request to <i>watchfolio.com/api/watches?brand=brandNameAsString</i> keep in mind the supported brands are Rolex, Patek Philippe, Omega, Seiko, Cartier, IWC, TAG Heuer, querying any other brand will result in a 404 response.</p>
+    </section>
+    
+</body>
+</html>
