@@ -20,12 +20,11 @@
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap");
     </style>
     <link rel="icon" href="images/Wlogo.png" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="additionalStyles.css" />
-    <link rel="stylesheet" href="media.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/additionalStyles.css" />
+    <link rel="stylesheet" href="./styles/media.css" />
     <script type="module" src="app.js" defer></script>
-    <script type = "module" src="script.js" defer></script>
-    <script type="module" src="autosuggest.js" defer></script>
+    <script type="module" src="script.js" defer></script>
 
     <title>Watchfolio</title>
   </head>
@@ -42,8 +41,10 @@
           <div class="header-text">
            <a href="apidocs.html" class="wf-link">API Documentation</a>
           </div>
+          
         </div>
 
+        <div class="flex">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -58,6 +59,7 @@
             d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
           />
         </svg>
+       </div>
       </header>
     </div>
     <div class="header-wrapper">
@@ -210,7 +212,9 @@
           </tr>-->
         </tbody>
       </table>
+
     </section>
+
 
     <div class="overlay-blur hidden"></div>
     <div class="watches-tracked module hidden">
@@ -218,14 +222,13 @@
       <p>
         Those include
         <ul>
-          <li class="list">Rolex</li>
-          <li class="list">Patek Philippe</li>
-          <li class="list">Omega</li>
-          <li class="list">Seiko</li>
-          <li class="list">Cartier</li>
-          <li class="list">IWC</li>
-          <li class="list">TAG
-            Heuer.</li>
+          <li>Rolex</li>
+          <li>Patek Philippe</li>
+          <li>Omega</li>
+          <li>Seiko</li>
+          <li>Cartier</li>
+          <li>IWC</li>
+          <li>TAG Heuer</li>
         </ul> 
       </p>
       <i>We plan to add support for more brands in the future.</i>
@@ -241,9 +244,48 @@
 
     </div>
     <div class="welcome module hidden">
-      
-      <h1>Welcome abord</h1>
+      <h1>Welcome</h1>
+      <p>Join the 1000+ others who are having a leg up in the watch market.</p>
+      <form class= "form-grid">
+        <!--grid four ways-->
+        <div>
+        <label for="email">Email</label>
+        <input id = "email" type="email" placeholder="me@example.com" required>
+        </div>
+        <div>
+          <label for="pass">Password</label>
+          <input id = "pass" type="password" required>
+        </div>
+        <div>
+          <label for="pass">Confirm Password</label>
+          <input id = "pass" type="password" required>
+        </div>
+        <button>Submit</button>
+      </form>
     </div>
-    <p class="author">✨Created by Joshua Poon✨</p>
+
+    <div class="module login hidden">
+      <h1>Welcome Back</h1>
+      <form class= "form-grid">
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="me@example.com" required>
+        </div>
+        <div>
+          <label for="pass">Password</label>
+          <input id = "pass" type="password" required>
+        </div>
+        <div>
+          <button>Submit</button>
+
+      
+      
+      </form>
+
+
+
+
+    </div>
+
   </body>
 </html>
