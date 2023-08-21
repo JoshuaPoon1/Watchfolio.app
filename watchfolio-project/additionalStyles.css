@@ -4,7 +4,10 @@
 .color-white {
   color: white;
 }
-.color-green {
+.color-grey
+{
+  color:grey;
+}.color-green {
   color: rgb(120, 223, 120);
 }
 .bkgrnd-prpl {
