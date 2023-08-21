@@ -287,6 +287,7 @@ th {
   background-color: rgba(0, 234, 255, 0.5);
   backdrop-filter: blur(5px);
   font-size: 1.3rem;
+  z-index: 10;
 }
 td {
   padding: 18px;
@@ -359,6 +360,13 @@ th:nth-child(n + 4) {
   background-color: aliceblue;
 }
 
+.login{
+  background-image: linear-gradient(to bottom left,rgb(211, 211, 249),white);
+  width: 60rem;
+  height: 40rem;
+}
+
+
 .module h1 {
   font-size: 3rem;
   margin-bottom: 2rem;
@@ -386,24 +394,22 @@ th:nth-child(n + 4) {
   border-radius: 1rem;
   background-color: rgb(14, 9, 115);
   border: 3px solid aqua;
+  text-align: center;
 }
 
 
 .module.welcome h1 {
-  margin-left: 50%;
-  transform: translateX(-50%);
   font-size: 5rem;
   color: white;
 }
 
 .module.welcome p {
-  margin-left: 44%;
-  transform: translateX(-44%);
   font-size: 1.2rem;
   color: white;
 }
 
 .form-grid{
+  text-align:left;
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
@@ -426,6 +432,7 @@ th:nth-child(n + 4) {
   height:70%;
   font-size: 1.7rem;
   align-self: flex-end;
+  cursor:pointer;
 }
 .form-grid button:hover{
   background-color: aquamarine;
@@ -439,9 +446,21 @@ th:nth-child(n + 4) {
   width:100%;
   top:0;
   text-align:center;
+  z-index: -1;
+
+
 }
+
 .padding_zero{
   position:relative;
   padding:0;
-  
+}
+
+.author{
+  font-size:0.8rem;
+
+}
+.flex{
+  display:flex;
+  gap:2rem;
 }
