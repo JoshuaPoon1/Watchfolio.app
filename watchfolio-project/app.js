@@ -15,12 +15,27 @@ class watch {
     this.name = this.type + " " + name;
   }
 }
-
+/*
 const seamaster = new watch(5422,2022,-2.45,-4.54,-12.43,"seamaster","omega");
 const speedmaster = new watch(8888,2022,-2.45,-4.54,-12.43,"speedmaster","omega");
 const daytona = new watch(34000, 2022, 1.2, 3.5, 12.43, "daytona", "rolex");
+*/
+let watches = [
+new watch(5422,2022,-2.45,-4.54,-12.43,"seamaster","omega"),
+new watch(8888,2022,-2.45,-4.54,-12.43,"speedmaster","omega"),
+new watch(34000, 2022, 1.2, 3.5, 12.43, "daytona", "rolex"),
+new watch(12500, 2023, -1.5, -2.1, -5.8, "Royal Oak", "Audemars Piguet"),
+new watch(8500, 2023, -3.0, -4.8, -9.1, "Tank", "Cartier"),
+new watch(7200, 2023, -1.0, -2.0, -4.0, "Nautilus", "Patek Philippe"),
+new watch(9750, 2022, -2.8, -3.5, -8.2, "Big Bang", "Hublot"),
+new watch(18000, 2023, -1.2, -2.9, -7.4, "Master Control", "Jaeger-LeCoultre"),
+new watch(6200, 2022, -2.2, -3.4, -9.0, "Submariner", "Rolex"),
+new watch(3600, 2023, -1.8, -3.1, -6.7, "Portofino", "IWC"),
+new watch(14250, 2022, 0.8, 2.5, 5.3, "Aquaracer", "TAG Heuer"),
+new watch(11000, 2023, -1.5, -2.8, -6.1, "Radiomir", "Panerai"),
+new watch(28000, 2022, 1.0, 2.7, 5.6, "Royal Oak Offshore", "Audemars Piguet"),
+];
 
-let watches = [];
 
 //we need to read api to store each object accordingly.
 /*
@@ -29,8 +44,9 @@ const testApi = await fetch("www.watchfolio.app/api/v1/watches")
 
 */
 
-//for loop and push each watch.
+/*for loop and push each watch.
 watches.push(seamaster, speedmaster, daytona);
+*/
 
 
 
@@ -46,8 +62,6 @@ class app {
   _injectHtml() {
     let filter = filterBy.value;
     ranking.innerHTML = ""; //clear everything.
-    
-    /*helper function*/
     function helpMeSort(arr) {
       let html = arr.sort((a, b) => b.price - a.price).map((watch, index) => {
           return `
@@ -65,7 +79,6 @@ class app {
         }).join("");
       ranking.insertAdjacentHTML("beforeend", html);
     }
-    /*--------*/
 
     if (filter == "omega" || filter == "rolex") {
       let brandFiltered = watches.filter((watch) => watch.type === filter);
@@ -106,6 +119,7 @@ class app {
     })
     
   }
+  //helper
   _clear() {
     autosuggestionList.innerHTML = "";
   }
@@ -115,7 +129,10 @@ class app {
   }
 
 }
+
 const myApp = new app();
+
+
 
 
 
