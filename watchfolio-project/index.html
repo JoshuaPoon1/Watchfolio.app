@@ -5,11 +5,7 @@
     Made by Joshua Poon :p
     All source code can be found on
     https://github.com/JoshuaPoon1/Watchfolio.app
-    Fork to your hearts desire. 
-     / _ \
-   \_\(_)/_/
-    _//"\\_ 
-     /   \
+
     *********************************
   -->
   <head>
@@ -25,6 +21,9 @@
     <link rel="stylesheet" href="../styles/media.css" />
     <script type="module" src="../app.js" defer></script>
     <script type="module" src="../script.js" defer></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script type="module" src="../LPgraph.js" defer></script>
+
 
     <title>Watchfolio</title>
   </head>
@@ -39,7 +38,7 @@
             Exchanges Tracked: <a href="#" class="wf-link et">2</a>
           </div>
           <div class="header-text">
-           <a href="apidocs.html" class="wf-link">API Documentation</a>
+           <a href="how.html" class="wf-link">How It Works</a>
           </div>
           
         </div>
@@ -190,6 +189,7 @@
           <tr>
             <th>#</th>
             <th>Name</th>
+            <th>Ref #</th>
             <th>Production Date</th>
             <th>Price</th>
             <th>7d%</th>
